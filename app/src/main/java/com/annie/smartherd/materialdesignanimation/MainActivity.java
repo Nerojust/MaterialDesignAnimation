@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Re-enter transition is executed when returning back to this activity
         Slide slideTransition = new Slide();
         slideTransition.setSlideEdge(Gravity.LEFT); // Use START if using right - to - left locale
-        slideTransition.setDuration(1000);
+        slideTransition.setDuration(600);
 
         getWindow().setReenterTransition(slideTransition);  // When MainActivity Re-enter the Screen
         getWindow().setExitTransition(slideTransition);     // When MainActivity Exits the Screen
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sharedElementTransition(View view) {
-
         Pair[] pair = new Pair[3];
         pair[0] = new Pair<View, String>(imgLogo, "logo_shared");
         pair[1] = new Pair<View, String>(txvShared, "smartherd_shared");
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void explodeTransitionByCode(View view) {
-
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent i = new Intent(MainActivity.this, TransitionActivity.class);
         i.putExtra(Constants.KEY_ANIM_TYPE, Constants.TransitionType.ExplodeJava);
@@ -113,6 +111,5 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra(Constants.KEY_ANIM_TYPE, Constants.TransitionType.FadeXML);
         i.putExtra(Constants.KEY_TITLE, "Fade By XML");
         startActivity(i, options.toBundle());
-
     }
 }
